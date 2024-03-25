@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="/styles.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog Ninja | <%= title %></title>
+  </head>
+  <body>
+    <h1>Home Page</h1>
+
+    <%- include('./partials/nav.ejs') %>
+
+    <div class="blogs content">
+      <h2>All Blogs</h2>
+      <% if(blogs.length > 0){ %> <% blogs.forEach(blog=>{ %>
+      <h3 class="title"><%=blog.title%></h3>
+      <p class="sinppet"><%=blog.snippet%></p>
+
+      <% }) %> <%}else{%>
+      <p>There are no more Blogs to display</p>
+      <%}%>
+    </div>
+  </body>
+
+  <%- include('./partials/footer')%>
+</html>
